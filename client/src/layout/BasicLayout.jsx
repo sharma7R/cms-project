@@ -25,6 +25,11 @@ function BasicLayouts() {
                         className="bg-black text-cyan-400 px-5 py-2 rounded-full border border-black shadow font-semibold transition-all duration-150 hover:bg-cyan-900 hover:text-white">
                         sign-in
                     </Link>
+                    <Link
+                        to="/devinfo"
+                        className="bg-black text-cyan-400 px-5 py-2 rounded-full border border-black shadow font-semibold transition-all duration-150 hover:bg-cyan-900 hover:text-white">
+                        Developer Info
+                    </Link>
                 </div>
             </header>
             <main className="">
