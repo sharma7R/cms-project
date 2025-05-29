@@ -1,16 +1,11 @@
-import { useState } from 'react'
-import './App.css'
-import Signinup from './pages/Signinup'
-import Home from './pages/Home'
+import React from 'react'
+import AppRouter from './route/AppRoute'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+export default function App() {
   return (
     <>
-    <Signinup/>
+    <AppRouter/>
     </>
   )
 }
-
-export default App
