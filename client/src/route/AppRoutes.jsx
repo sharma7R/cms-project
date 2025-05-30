@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import BasicLayout from '../layout/BasicLayout'
 import Home from '../pages/Home'
-import Developer from '../pages/Developer';
 import Login from '../pages/Login';
 import SignUp from '../pages/Signup';
 import Intro from '../pages/dashboard/Intro';
 import DashboardLayouts from '../layout/DashboardLayout';
 import PrivateRoute from './PrivateRoute';
 import Interview from '../pages/dashboard/Interview';
+import Developer from '../pages/dashboard/Developer';
 
 
 export default function AppRoutes() {
@@ -16,11 +16,10 @@ export default function AppRoutes() {
             <Route path="/" element={<BasicLayout />}>
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home />} />
+            </Route>
                 <Route path="/login" element={<Login/>} />
-                <Route path="/devinfo" element={<Developer/>} />
                 <Route path="/signup" element={<SignUp/>} />
 
-            </Route>
             <Route
         path="/dashboard"
         element={(
@@ -30,6 +29,7 @@ export default function AppRoutes() {
       >
         <Route path="/dashboard/intro" element={<Intro/>} />
         <Route path="/dashboard/inter" element={<Interview/>} />
+        <Route path="/dashboard/devel" element={<Developer/>} />
       </Route>
         </Routes>
     )
