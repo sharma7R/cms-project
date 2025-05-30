@@ -2,7 +2,7 @@ import React from 'react';
 
 function Developer(props) {
     return (
-        <div className="p-20 min-h-[200vh] bg-white shadow-md flex justify-center items-start">
+        <div className="p-20 min-h-[200vh] bg-white shadow-md flex justify-center items-start w-[58rem]">
             <div className="max-w-2xl w-full">
                 <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center">Meet the Developers</h1>
                 <p className="text-gray-600 mb-4 text-center">

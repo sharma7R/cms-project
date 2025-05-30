@@ -55,7 +55,7 @@ export default function Interview() {
     }
 
     return (
-        <div className="p-20 min-h-[200vh] w-[58rem] bg-white shadow-md flex flex-col items-center">
+        <div className="p-20 min-h-[90vh] w-[58rem] bg-white shadow-md flex flex-col items-center">
             <div className="w-full max-w-2xl">
                 <h2 className="text-3xl font-bold text-black-600 mb-8 mt-8">Interview Experience Management</h2>
                 <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8 flex flex-col gap-6 w-full">

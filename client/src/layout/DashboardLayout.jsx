@@ -3,10 +3,9 @@ import { Link, Outlet, useLocation } from "react-router";
 import AuthContext from "../context/AuthContext";
 
 const PATHS = [
-    { path: '/dashboard/intro', text: 'intro' },
-    { path: '/dashboard/inter', text: 'inter' },
-    { path: '/dashboard/devel', text: 'deve' },
-
+    { path: '/dashboard/intro', text: '📖 Intro' },
+    { path: '/dashboard/inter', text: '🧩 Experiences' },
+    { path: '/dashboard/devel', text: '💻 Developer' },
 ];
 
 const DASHBOARD_PATHS = [
