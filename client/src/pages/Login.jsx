@@ -48,8 +48,11 @@ export default function Login() {
           type='submit'
           className="w-full bg-blue-500 text-black py-2 rounded hover:bg-blue-600 transition-colors font-semibold"
         >
-          Submit
+          Submit 🚀
         </button>
+        <p className="mt-4 text-center text-gray-600">
+          Create a New Account? <a href="/signUp" className="text-blue-500 hover:underline"> New </a>
+          </p>
       </form>
     </div>
   )

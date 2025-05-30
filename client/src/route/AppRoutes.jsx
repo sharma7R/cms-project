@@ -16,11 +16,11 @@ export default function AppRoutes() {
             <Route path="/" element={<BasicLayout />}>
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home />} />
+            </Route>
                 <Route path="/login" element={<Login/>} />
                 <Route path="/devinfo" element={<Developer/>} />
                 <Route path="/signup" element={<SignUp/>} />
 
-            </Route>
             <Route
         path="/dashboard"
         element={(

@@ -8,7 +8,7 @@ function BasicLayouts() {
                     <span role="img" aria-label="notes" className="text-4xl animate-bounce">
                         <Link to={'/home'}>📝</Link>
                     </span>
-                    <span className="bg-white text-pink-700 px-5 py-1 rounded-lg shadow-md">notes</span>
+                    <span className="bg-white text-pink-700 px-5 py-1 rounded-lg shadow-md">Notes</span>
                 </div>
                 <div className="flex flex-row gap-4 mr-2 items-center">
                     <Link to={'/login'}>

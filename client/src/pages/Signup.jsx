@@ -46,10 +46,13 @@ export default function SignUp() {
         </div>
         <button
           type='submit'
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors font-semibold"
+          className="w-full bg-blue-500 text-black py-2 rounded hover:bg-blue-600 transition-colors font-semibold"
         >
-          create new account
+          create new account 🚀
         </button>
+        <p className="mt-4 text-center text-gray-600">
+          Already have an account? <a href="/login" className="text-blue-500 hover:underline">Login</a>
+          </p>
       </form>
     </div>
   )
