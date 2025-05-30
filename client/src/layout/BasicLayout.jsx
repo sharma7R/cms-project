@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router";
 function BasicLayouts() {
     return (
         <>
-            <header className="w-screen bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 text-white py-3 shadow-lg flex flex-col sm:flex-row items-center justify-between px-8 rounded-b-3xl border-b-4 border-pink-400">
+            <header className="w-[80rem] bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 text-white py-3 shadow-lg flex flex-col sm:flex-row items-center justify-between px-8 rounded-b-3xl border-b-4 border-pink-400 mx-auto">
                 <div className="text-3xl font-extrabold flex items-center tracking-wide drop-shadow-lg w-screen">
                     <span role="img" aria-label="notes" className="text-4xl animate-bounce">
                         <Link to={'/home'}>📝</Link>
