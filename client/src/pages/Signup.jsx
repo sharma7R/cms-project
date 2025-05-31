@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
-import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
 import AuthContext from '../context/AuthContext';
 
 export default function SignUp() {
@@ -14,10 +14,21 @@ export default function SignUp() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black to-cyan-400 w-[100vw]">
-      <div className="bg-black p-8 rounded-xl shadow-lg w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center text-cyan-400">Sign up</h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+    <section
+      className="min-h-screen w-screen fixed top-0 left-0 flex items-center justify-center"
+      style={{ background: '#fff7ed', zIndex: 2 }}
+    >
+      <div
+        className="p-8 rounded-2xl w-full max-w-sm border border-yellow-200"
+        style={{
+          boxShadow: '0 8px 32px 0 rgba(120, 72, 0, 0.35), 0 1.5px 8px 0 rgba(120, 72, 0, 0.18)',
+          background: '#fff3e0',
+        }}
+      >
+        <h2 className="text-3xl font-extrabold mb-6 text-center tracking-tight" style={{ color: '#784800', letterSpacing: '0.02em' }}>
+          Sign Up
+        </h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
             <input
               id="email"
@@ -26,8 +37,15 @@ export default function SignUp() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-cyan-400 bg-black text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-700 transition"
+              style={{
+                borderColor: '#e0c48c',
+                background: '#fff7ed',
+                color: '#784800',
+                fontWeight: 500,
+              }}
               placeholder="Enter your email"
+              autoComplete="username"
             />
           </div>
           <div>
@@ -38,19 +56,42 @@ export default function SignUp() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-cyan-400 bg-black text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              placeholder="Enter your password"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-700 transition"
+              style={{
+                borderColor: '#e0c48c',
+                background: '#fff7ed',
+                color: '#784800',
+                fontWeight: 500,
+              }}
+              placeholder="********"
+              autoComplete="new-password"
             />
           </div>
           <button
-            type='submit'
-            className="w-full bg-cyan-600 text-black font-bold py-2 rounded-lg hover:bg-cyan-700 transition bg"
+            type="submit"
+            className="w-full font-bold py-2 rounded-lg transition shadow-md"
+            style={{
+              background: '#784800',
+              color: '#fff7ed',
+              letterSpacing: '0.03em',
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.background = '#a67c52';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.background = '#784800';
+              e.currentTarget.style.color = '#fff7ed';
+            }}
           >
-            create new account 🚀
+            Create New Account 🚀
           </button>
         </form>
-        <p className="mt-6 text-cyan-200 text-sm text-center">
-          Already have an account? <a href="/login" className="underline hover:text-white">Login</a>
+        <p className="mt-6 text-sm text-center" style={{ color: '#a67c52' }}>
+          Already have an account?{' '}
+          <a href="/login" className="underline hover:text-yellow-800 transition" style={{ color: '#784800', fontWeight: 600 }}>
+            Login
+          </a>
         </p>
       </div>
     </section>

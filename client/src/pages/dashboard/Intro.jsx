@@ -3,7 +3,7 @@ import React from "react";
 export default function Intro() {
     return (
         <div className="p-20 min-h-[80vh] bg-white shadow-md">
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome to the Interview Experience Management App</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-2 ANIM">Welcome to the Interview Experience Management App</h1>
             <p className="text-gray-600 mb-4">
                 This app enables you to document, organize, and analyze your interview experiences, making it easier to prepare for future opportunities and share insights with others.
             </p>

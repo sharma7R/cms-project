@@ -12,13 +12,27 @@ class UserService {
       // already db present in ls
       this.db = JSON.parse(data);
     }
+    this.currentUser = localStorage.getItem("currentUserKey"); // Track the current user persistently
   }
+
+  setUser(email) {
+    this.currentUser = email;
+    if (email) {
+      localStorage.setItem("currentUserKey", email);
+    } else {
+      localStorage.removeItem("currentUserKey");
+    }
+  }
+
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
   addUser(email, password) {
     if (this.isUserExists(email)) {
       throw new Error("user already exists");
     }
     this.db.users.push({ email, password });
-    localStorage.removeItem("db");
     localStorage.setItem("db", JSON.stringify(this.db));
   }
   isUserExists(email) {
@@ -33,6 +47,7 @@ class UserService {
     if (user.password !== password) {
       throw new Error("wrong password");
     }
+    this.setUser(email); // Set current user on successful login
   }
   editUserEmail(email, newEmail) {
     if (!this.isUserExists(email)) {
@@ -44,7 +59,10 @@ class UserService {
       }
       return obj;
     });
-    localStorage.removeItem("db");
+    if (this.currentUser === email) {
+      this.currentUser = newEmail;
+      localStorage.setItem("currentUserKey", newEmail);
+    }
     localStorage.setItem("db", JSON.stringify(this.db));
   }
 
@@ -58,7 +76,6 @@ class UserService {
       }
       return obj;
     });
-    localStorage.removeItem("db");
     localStorage.setItem("db", JSON.stringify(this.db));
   }
 }
