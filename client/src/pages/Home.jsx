@@ -8,15 +8,7 @@ const Home = () => {
   const fullText = 'Interview Experience Management';
   const typingSpeed = 90; // ms per character
 
-  React.useEffect(() => {
-    let idx = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(fullText.slice(0, idx + 1));
-      idx++;
-      if (idx === fullText.length) clearInterval(interval);
-    }, typingSpeed);
-    return () => clearInterval(interval);
-  }, []);
+  // Removed duplicate useEffect for typing animation
   React.useEffect(() => {
     let idx = 0;
     let typing = true;
