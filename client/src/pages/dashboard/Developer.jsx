@@ -1,10 +1,31 @@
 import React from 'react';
 
 function Developer(props) {
+    const [show, setShow] = React.useState(true);
+
+    React.useEffect(() => {
+        let timeout;
+        if (!show) {
+            timeout = setTimeout(() => setShow(true), 1000);
+        }
+        return () => clearTimeout(timeout);
+    }, [show]);
+
     return (
-        <div className="p-20 min-h-[200vh] bg-white shadow-md flex justify-center items-start">
+        <div className="p-20 min-h-[200vh] bg-white shadow-md flex justify-center items-start w-[58rem]">
             <div className="max-w-2xl w-full">
-                <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center">Meet the Developers</h1>
+                <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center typewriter">
+                    {show ? (
+                        <span
+                            onAnimationEnd={() => setShow(false)}
+                            style={{ display: "inline-block", width: "100%" }}
+                        >
+                            Meet the Developers..
+                        </span>
+                    ) : (
+                        <span style={{ opacity: 0 }}>Meet the Developers</span>
+                    )}
+                </h1>
                 <p className="text-gray-600 mb-4 text-center">
                     This page introduces the developers behind the Interview Experience Management App. Learn about their roles, contributions, and how to connect with them.
                 </p>
@@ -36,6 +57,26 @@ function Developer(props) {
                     </p>
                 </div>
             </div>
+            <style>
+                {`
+                .typewriter {
+                    overflow: hidden;
+                    border-right: .15em solid #6366f1;
+                    white-space: nowrap;
+                    margin: 0 auto;
+                    letter-spacing: .05em;
+                    animation: typing 5s steps(30, end), blink-caret .75s step-end infinite;
+                }
+                @keyframes typing {
+                    from { width: 0 }
+                    to { width: 100% }
+                }
+                @keyframes blink-caret {
+                    from, to { border-color: transparent }
+                    50% { border-color: #6366f1; }
+                }
+                `}
+            </style>
         </div>
     );
 }

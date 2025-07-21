@@ -8,6 +8,7 @@ import DashboardLayouts from '../layout/DashboardLayout';
 import PrivateRoute from './PrivateRoute';
 import Interview from '../pages/dashboard/Interview';
 import Developer from '../pages/dashboard/Developer';
+import About from '../pages/About';
 
 
 export default function AppRoutes() {
@@ -16,9 +17,10 @@ export default function AppRoutes() {
             <Route path="/" element={<BasicLayout />}>
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home />} />
-            </Route>
                 <Route path="/login" element={<Login/>} />
                 <Route path="/signup" element={<SignUp/>} />
+                <Route path="/about" element={<About/>} />
+            </Route>
 
             <Route
         path="/dashboard"

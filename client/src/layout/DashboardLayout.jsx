@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { Link, Outlet, useLocation } from "react-router";
+import { Link, Outlet, useLocation, useNavigate } from "react-router";
 import AuthContext from "../context/AuthContext";
 
 const PATHS = [
-    { path: '/dashboard/intro', text: 'intro' },
-    { path: '/dashboard/inter', text: 'inter' },
-    { path: '/dashboard/devel', text: 'deve' },
-
+    { path: '/dashboard/intro', text: '📖 Intro' },
+    { path: '/dashboard/inter', text: '🧩 Experiences' },
+    { path: '/dashboard/devel', text: '💻 Developer' },
 ];
 
 const DASHBOARD_PATHS = [
@@ -15,6 +14,12 @@ const DASHBOARD_PATHS = [
 export default function DashboardLayouts() {
     const location = useLocation();
     const { logout } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        logout();
+        navigate('/home');
+    }
 
     return (
         <div style={{ display: "flex", minHeight: "100vh", background: "#f3f4f6" }}>
@@ -58,7 +63,7 @@ export default function DashboardLayouts() {
                     ))}
                 </nav>
                 <button
-                    onClick={logout}
+                    onClick={handleLogout}
                     style={{
                         marginTop: "auto",
                         width: "100%",
